@@ -1,27 +1,149 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Scott Withers Jr.</title>
+    <title>Scott Withers Resume</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
+  <style>
+body {font-family: "Lato", sans-serif;}
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #bfbfbf;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #000080;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #000080;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
   <body>
     <nav>
       <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/resume.html">Resume</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/visual">Visualizations</a></li>
       </ul>
     </nav>
     <div class="container">
       <div class="blurb">
-          <h1>Scott Withers Jr.</h1>
+          <h1>Resume</h1>
       </div><!-- /.blurb -->
     </div><!-- /.container -->
+    <ul class="tab">
+      <li><a href="#" class="tablinks" onclick="openRes(event, 'Exp')">Experience</a></li>
+      <li><a href="#" class="tablinks" onclick="openRes(event, 'Edu')">Education</a></li>
+      <li><a href="#" class="tablinks" onclick="openRes(event, 'CS')">Certifications & Skills</a></li>
+      <li><a href="#" class="tablinks" onclick="openRes(event, 'LI')">Leadership & Involvement</a></li>
+    </ul>
+
+    <div id="Exp" class="tabcontent">
+      <h3 style="text-align:left;">University of North Carolina at Charlotte<span style="float:right;">2016</span></h3>
+      <p style="font-size:17px"><i>Graduate Research Assistant</i></p>
+      <p>Developed a profile sheet and visualizations for the program to be used in the semi-annual board meeting<br>
+        Management of admissions data and student internship data for faculty governance</p>
+        <hr>
+      <h3 style="text-align:left;">Appalachian State University<span style="float:right;">2014</span></h3>
+      <p style="font-size:17px"><i>Graduate Assistant</i></p>
+      <p>Contributed to a research project on student trend analysis for Economics Dept. Chair Dr. John Whitehead</p>
+        <hr>
+      <h3 style="text-align:left;">Kimco Realty Corporation<span style="float:right;">2012-2014</span></h3>
+      <p style="font-size:17px"><i>Accounting Assistant</i></p>
+      <p>Assigned over 40 cash accounts for the reconciliation of the bank and mortgage statements<br>
+        Time-critical use of Hyperion and Excel to perform budget analysis for over 40 shopping centers<br>
+        Worked closely with the regional controller, legal consultants, and the Chairman to put together a package requesting damages from BP in the wake of the oil spill</p>
+    </div>
+
+    <div id="Edu" class="tabcontent">
+      <h3 style="text-align:left;">University of North Carolina at Charlotte<span style="float:right;">2017</span></h3>
+      <p style="font-size:17px"><i>Masters of Science:<b> Data Science and Business Analytics</b></i></p>
+      <p>Analysis of 3M patent data in Hadoop. My group and I produced 5 topics through LDA topic modeling and developed a network based on cosine similarity between topics.</p>
+        <hr>
+      <h3 style="text-align:left;">Appalachian State University<span style="float:right;">2014</span></h3>
+      <p style="font-size:17px"><i>Masters of Business Administration:<b> Business Analytics</b></i></p>
+      <p>Trip to France in October 2014 to work with a group of international students to present in front of a panel of international professors. Our research and presentation received top marks from all professors present.<br>
+        Worked on Chinese market research and analysis for the company Free Air, as well as a business proposal of analytical services that Free Air could explore with data obtained from Free Air products.</p>
+        <hr>
+      <h3 style="text-align:left;">Appalachian State University<span style="float:right;">2012</span></h3>
+      <p style="font-size:17px"><i>Bachelors of Science:<b> Accounting & Economics</b></i></p>
+      <p>Won the Economics Award from the Walker College of Business’ economics department</p>
+    </div>
+
+    <div id="CS" class="tabcontent">
+      <h2>Certifications</h2>
+      <p style="font-size:17x">CPA Candidate, NC (All Exams Passed)<br>SAS Business Analytics Certification<br>
+        ASU Graduate Certificate in Business Analytics</p>
+      <h2>Program Proficiencies</h2>
+      <p>SAS Enterprise Miner and SAS Enterprise Guide, R, SQL, MapReduce functions and Hive interface
+        in Hadoop, Tableau, Python, Hyperion, and Smartview</p>
+    </div>
+
+    <div id="LI" class="tabcontent">
+      <p></p>
+    </div>
+
+    <script>
+    function openRes(evt, resName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(resName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    </script>
     <footer>
       <ul>
+          <li><a href="">About</a></li>
           <li><a href="">email</a></li>
-          <li><a href="">github.com/hankquinlan</a></li>
+          <li><a href="">github.com/scott-withers</a></li>
       </ul>
     </footer>
   </body>

@@ -12,6 +12,10 @@ nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
+img {
+  float:left;
+  margin: 0px 45px 20px 0px;
+}
 a {
     text-decoration: none;
     color: #999;
@@ -24,12 +28,13 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 1.4em;
     color: #333;
 }
 footer {
-    border-top: 1px solid #d5d5d5;
+    position: float;
+    border-top: 5px solid #d5d5d5;
     font-size: .8em;
 }
 
