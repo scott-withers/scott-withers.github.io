@@ -63,8 +63,8 @@ ul.tab li a:focus, .active {
       <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/resume.html">Resume</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/visual">Visualizations</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/viz.html">Visualizations</a></li>
       </ul>
     </nav>
     <div class="container">
@@ -125,6 +125,17 @@ ul.tab li a:focus, .active {
     </div>
 
     <script>
+    $(document).ready(function() {
+      $(function() {
+        $( "#tabs" ).tabs();
+      });
+      $("#links > a").click(function() {
+        var link = $(this).attr('href').substring(-1,1);
+        console.log(link);
+        $('#tabs').tabs({active: link});
+      });
+    });
+    
     function openRes(evt, resName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -139,12 +150,12 @@ ul.tab li a:focus, .active {
         evt.currentTarget.className += " active";
     }
     </script>
-    <footer>
+    <div class="footer">
       <ul>
-          <li><a href="">About</a></li>
-          <li><a href="">email</a></li>
-          <li><a href="">github.com/scott-withers</a></li>
+        <li><a href="/about_me.html">About</a></li>
+        <li><a href="mailto:witherssw2113@gmail.com">email</a></li>
+        <li><a href="https://github.com/scott-withers">github.com/scott-withers</a></li>
       </ul>
-    </footer>
+    </div>
   </body>
-</html>
+  </html>
