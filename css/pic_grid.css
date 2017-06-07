@@ -2,19 +2,16 @@ body {
     margin: 40px auto;
     width: 85%;
 }
-.footer ul {
+#footer {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
-    list-style: none;
     font-weight: bold;
     position: float;
+    /*bottom: 0;*/
+    width: 100%;
+    height: 40px;
     border-top: 5px solid #d5d5d5;
     font-size: .8em;
-}
-
-.footer ul li {
-    display: inline;
-    margin-right: 20px;
 }
 nav ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
