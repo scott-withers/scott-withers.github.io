@@ -4,6 +4,49 @@
     <title>Withers Projects</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
+    <style>
+      body {font-family: "Lato", sans-serif;}
+      /* Style the tab */
+      div.tab {
+        float: left;
+        border: 1px solid #ccc;
+        background-color: #bfbfbf;
+        width: 20%;
+        height: auto;
+      }
+      /* Style the buttons inside the tab */
+      div.tab button {
+        display: block;
+        background-color: inherit;
+        color: white;
+        padding: 14px 16px;
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 17px;
+      }
+      /* Change background color of buttons on hover */
+      div.tab button:hover {
+        background-color: #000080;
+      }
+      /* Create an active/current "tab button" class */
+      div.tab button.active {
+        background-color: #000080;
+      }
+      /* Style the tab content */
+      .tabcontent {
+        float: left;
+        padding: 0px 12px;
+        border: none;
+        width: 70%;
+        border-left: none;
+        height: 30px;
+      }
+    </style>
+  </head>
   <body>
     <nav>
       <ul>
@@ -19,11 +62,75 @@
       <div class="blurb">
           <h1>Projects</h1>
       </div><!-- /.blurb -->
-
-      <div id="footer">
-          <a href="https://github.com/scott-withers">github.com/scott-withers</a>
+    </div><!-- /.container -->
+      <div class="tab">
+        <button class="tablinks" onclick="openProj(event, '3M')" id="defaultOpen">Analyzing 3M Patents</button>
+        <button class="tablinks" onclick="openProj(event, 'Book')">SQL Bookstore Project</button>
+        <button class="tablinks" onclick="openProj(event, 'Trump')">Donald Trump Voter Segmentation</button>
+        <button class="tablinks" onclick="openProj(event, 'Risk')">Womens Health Risk Assessment Project</button>
+        <button class="tablinks" onclick="openProj(event, 'HHUSA')">Hire Heroes USA Data Challenge</button>
+        <button class="tablinks" onclick="openProj(event, 'Patent')">Patent Clustering in Spark</button>
       </div>
 
-    </div><!-- /.container -->
+      <div id="3M" class="tabcontent">
+        <h3>Analyzing 3M Patents</h3>
+        <p>
+          <i>Coming Soon!</i>
+        </p>
+      </div>
+
+      <div id="Book" class="tabcontent">
+        <h3>SQL Bookstore Project</h3>
+        <p>
+          <i>Coming Soon!</i>
+        </p>
+      </div>
+
+      <div id="Trump" class="tabcontent">
+        <h3>Donald Trump Voter Segmentation</h3>
+        <p>
+          <i>Coming Soon!</i>
+        </p>
+      </div>
+
+      <div id="Risk" class="tabcontent">
+        <h3>Womens Health Risk Assessment</h3>
+        <p>
+          <i>Coming Soon!</i>
+        </p>
+      </div>
+
+      <div id="HHUSA" class="tabcontent">
+        <h3>Hire Heroes USA Data Challenge</h3>
+        <p>
+          <i>Coming Soon!</i>
+        </p>
+      </div>
+
+      <div id="Patent" class="tabcontent">
+        <h3>Patent Clustering in Spark</h3>
+        <p>
+          <i>Coming Soon!</i>
+        </p>
+      </div>
+
+      <script>
+        function openProj(evt, projName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(projName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        </script>
   </body>
 </html>

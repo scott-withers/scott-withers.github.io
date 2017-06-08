@@ -5,86 +5,70 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
   <style>
-body {font-family: "Lato", sans-serif;}
-
-ul.tab {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #bfbfbf;
-}
-
-/* Float the list items side by side */
-ul.tab li {float: left;}
-
-/* Style the links inside the list items */
-ul.tab li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-/* Change background color of links on hover */
-ul.tab li a:hover {
-    background-color: #000080;
-}
-
-/* Create an active/current tablink class */
-ul.tab li a:focus, .active {
-    background-color: #000080;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s;
-}
-
-@-webkit-keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-</style>
-  <body>
-    <nav>
-      <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/resume.html">Resume</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/viz.html">Visualizations</a></li>
-          <li><a href="/about_me.html">About</a></li>
-      </ul>
-    </nav>
+  body {font-family: "Lato", sans-serif;}
+  /* Style the tab */
+  div.tab {
+      overflow: hidden;
+      border: none;
+      background-color: #bfbfbf;
+  }
+  /* Style the buttons inside the tab */
+  div.tab button {
+      background-color: inherit;
+      color: white;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+  }
+  /* Change background color of buttons on hover */
+  div.tab button:hover {
+      background-color: #000080;
+  }
+  /* Create an active/current tablink class */
+  div.tab button.active {
+      background-color: #000080;
+  }
+  /* Style the tab content */
+  .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: none;
+      border-top: none;
+  }
+  </style>
+    <body>
+      <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/resume.html">Resume</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/viz.html">Visualizations</a></li>
+            <li><a href="/about_me.html">About</a></li>
+        </ul>
+      </nav>
     <div class="container">
       <div class="blurb">
           <h1>Resume</h1>
       </div><!-- /.blurb -->
     </div><!-- /.container -->
-    <ul class="tab">
-      <li><a href="#" class="tablinks" onclick="openRes(event, 'Exp')">Experience</a></li>
-      <li><a href="#" class="tablinks" onclick="openRes(event, 'Edu')">Education</a></li>
-      <li><a href="#" class="tablinks" onclick="openRes(event, 'CS')">Certifications & Skills</a></li>
-      <li><a href="#" class="tablinks" onclick="openRes(event, 'LI')">Leadership & Involvement</a></li>
-    </ul>
+    <div class="tab">
+      <button class="tablinks" onclick="openRes(event, 'Exp')" id="defaultOpen">Experience</button>
+      <button class="tablinks" onclick="openRes(event, 'Edu')">Education</button>
+      <button class="tablinks" onclick="openRes(event, 'CS')">Certifications & Skills</button>
+      <button class="tablinks" onclick="openRes(event, 'LI')">Leadership & Involvement</button>
+    </div>
 
     <div id="Exp" class="tabcontent">
       <h3 style="text-align:left;">University of North Carolina at Charlotte<span style="float:right;">2016</span></h3>
       <p style="font-size:17px"><i>Graduate Research Assistant</i></p>
       <p>Developed a profile sheet and visualizations for the program to be used in the semi-annual board meeting<br>
-        Management of admissions data and student internship data for faculty governance</p>
+        Management of admissions data and student internship data for faculty governance<br>
+        Currently building a dashboard to help the admissions committee to track the applications process per semester, and to view applicants in a more visual manner.<br>
+        Developed a logistic regression model to aid the current admissions committee in the decision process which will cut down total review time per semester per committee member.</p>
         <hr>
       <h3 style="text-align:left;">Appalachian State University<span style="float:right;">2014</span></h3>
       <p style="font-size:17px"><i>Graduate Assistant</i></p>
@@ -113,31 +97,20 @@ ul.tab li a:focus, .active {
     </div>
 
     <div id="CS" class="tabcontent">
-      <h2>Certifications</h2>
+      <h3>Certifications</h3>
       <p style="font-size:17x">CPA Candidate, NC (All Exams Passed)<br>SAS Business Analytics Certification<br>
         ASU Graduate Certificate in Business Analytics</p>
-      <h2>Program Proficiencies</h2>
-      <p>SAS Enterprise Miner and SAS Enterprise Guide, R, SQL, MapReduce functions and Hive interface
-        in Hadoop, Tableau, Python, Hyperion, and Smartview</p>
+      <h3>Program Proficiencies</h3>
+      <p>SAS Enterprise Miner and SAS Enterprise Guide<br> R<br> SQL<br> MapReduce functions and Hive interface
+        in Hadoop<br> Tableau<br> Python<br> Oracle Hyperion w/ Smartview</p>
     </div>
 
     <div id="LI" class="tabcontent">
-      <p></p>
+      <p><i>Coming Soon!</i></p>
     </div>
 
     <script>
-    $(document).ready(function() {
-      $(function() {
-        $( "#tabs" ).tabs();
-      });
-      $("#links > a").click(function() {
-        var link = $(this).attr('href').substring(-1,1);
-        console.log(link);
-        $('#tabs').tabs({active: link});
-      });
-    });
-
-    function openRes(evt, resName) {
+      function openRes(evt, resName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
@@ -149,10 +122,13 @@ ul.tab li a:focus, .active {
         }
         document.getElementById(resName).style.display = "block";
         evt.currentTarget.className += " active";
-    }
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
     </script>
     <div id="footer">
         <a href="https://github.com/scott-withers">github.com/scott-withers</a>
     </div>
   </body>
-  </html>
+</html>
