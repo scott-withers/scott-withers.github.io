@@ -31,10 +31,12 @@
       /* Change background color of buttons on hover */
       div.tab button:hover {
         background-color: #000080;
+        color: #bfbfbf;
       }
       /* Create an active/current "tab button" class */
       div.tab button.active {
         background-color: #000080;
+        color: #bfbfbf;
       }
       /* Style the tab content */
       .tabcontent {
@@ -75,7 +77,43 @@
       <div id="3M" class="tabcontent">
         <h3>Analyzing 3M Patents</h3>
         <p>
-          <i>Coming Soon!</i>
+          <i>3M Patents Innovation Strategy<br>
+          Team Members: Christy C., Rajah C., Lorenzo M, Abdullah M., Ryan W.<br>
+          Program(s): Python, R, Hadoop, Tableau, Gephi<br>
+          Model(s): Topic Modeling, Graph analysis, clustering<br></i>
+          <br>
+          We analyzed 3M&#8217;s US patent portfolio relative to seven competitors using topic modeling, k-means clustering and network analysis. The dataset includes about
+          33,000 patents for the eight companies. Relative to the selected competitors, 3M has a competitive advantage in areas like Stock Materials, Synthetic Resins,
+          Optical Systems and Adhesives. Using cosine similarity on the class distribution by company, 3M&#8217;s patent portfolio is most like Bostik, Dow and Du Pont, who are
+          predominately Synthetic Materials and Chemistry companies. General Electric and Siemens focus more on Energy and Data & Processing patents; however, these companies
+          compete with 3M in areas like Surgery and Stock Materials patents.<br>
+          <br>
+          Next, we used Topic Modeling (Latent Dirichlet Allocation or LDA) to identify five topics in the patents&#8217; abstracts. We label the five topics as: Synthetic Materials,
+          Chemistry, Energy, Electrical and Data & Processing. We then use <i>k</i>-means clustering on the topic probabilities to create five patent clusters, each corresponding to
+          an LDA topic. Most of 3M&#8217;s patents (75%) are in Synthetic Materials and Chemistry patents.<br>
+          <br>
+          Finally, we examine shared Patent Title bigrams to analyze the relationship between patents using network analysis. Many of 3M&#8217;s patents share ideas and cross-pollinate
+          to create new, distruptive innovations. Synthetic Materials and Chemistry patents exhibit the strongest cross-pollination as they share many bigrams in classes like
+          Compositions, Adhesives, Abrasives and Synthetic Resins. On the other hand, 3M&#8217;s Electrical and Data & Processing patents are largely disconnected from the network.
+          3M has a competitive disadvantage in these patents as GE, Honeywell and Siemens dominant the market. We also expanded our analysis to competitors in Synthetic Materials
+          and Chemistry patents and 3M research collaboration with an assignee network.<br>
+          <br>
+          <strong>What Does All That Mean??</strong><br>
+          <br>
+          While 3M still enjoy a dominant position in Synthetic Materials, the external Dow/DuPont merger seriously threatens their market position, while internal initiatives
+          from CEO Inge Thulin, attempting to increase patent quantity, have not yielded the desired results. Our research uncovered an objective way to measure the value of a
+          patent: cross-pollination. (Similar to friends in a social network, we use Betweenness as a network measure of cross-pollination). GE seems to have mastered
+          cross-pollination and enjoys an enviable position in the patent world; 3M has only a toe-hold in the world of cross-pollinators.<br>
+          <br>
+          We recommend cultivating our cross-pollination and beat competitors at their own game. Now that we know how to measure cross-pollination, 3M can both reward the best
+          in-house inventors and snap up the best independent (freelance) inventors. Extending the cross-pollination measure to companies, we have a way to acquire small companies
+          that cross-pollinate, extending our innovative reach. And for foreign or large companies, 3M should form strategic alliances, again using cross-pollination as a yardstick.
+          Cross-pollination will create more patents, which in turn will bring more unique products to the market, creating value for customers. Diverting one-tenth of the R&D
+          Budget to cross-pollination could help this strategy succeed without increasing expenditures. We wouldd spend the same dollars, but in a more focused, targeted fashion.
+          A cross-pollination strategy should set Thulin&#8217;s innovation vision aright and ensure his long tenure at the helm. Never has 3M had such a powerful, data-driven tool
+          with which to drive innovation in our patent program.<br>
+          <br>
+          <br>
         </p>
       </div>
 
@@ -89,14 +127,110 @@
       <div id="Trump" class="tabcontent">
         <h3>Donald Trump Voter Segmentation</h3>
         <p>
-          <i>Coming Soon!</i>
+          <i>Team Members: Null<br>
+          Program(s): R<br>
+          Model(s): Clustering<br></i>
+          <br>
+          The purpose of this project was to look at the demographic profile of the people who vote for Donald Trump. This led me to create clusters
+          of demographic profiles and see which cluster votes for Donald Trump more compared to the other clusters. The dataset contains primary results,
+          demographic data, and a codebook. (Note: The data contains results from primary races as of March 2016, which is the reason why every state is
+          not represented.) Creation of several other datasets during the project were performed to look at numbers more accurately. The first phase I
+          focused solely on the primary_results.csv file. Created separate datasets to look at counties won, states won, and party ratios, all of which
+          relied heavily on the fraction_votes variable. During the second phase I was concerned more with demographic data and needed to merge the two
+          datasets together.<br>
+          <br>
+          For the modeling phase of the project I concentrated on clustering. The main idea behind <i>k</i>-means clustering is to minimize within-group variance
+          while maximizing between-group variance. To begin, the <i>k</i>-means algorithm randomly assigns each observation into <i>k</i> groups and calculates the
+          clusters center. The next two steps are done iteratively until convergence, [1] assign each observation to the group that has the closest center,
+          and [2] after all observations have been reassigned, recalculate the group’s centers. Upon determining the value of <i>k</i>, we can finally run the
+          <i>k</i>means algorithm in R. The kmeans function allows the user to specify centers, max iteration, and which particular algorithm to run, among others.
+          We set centers, <i>k</i>, equal to 4 (identified via line chart), max iteration to 1000, and algorithm to MacQueen.<br>
+          <br>
+          While clustering is extremely useful, the output can be hard to interpret. Initially we have no clue as to what these clusters mean or what they
+          represent. To help with this problem I looked at the mean of all the variables in each cluster and try to define what each cluster is. Below is a
+          breakdown of the 4 clusters identified:<br>
+          <br>
+          <strong>Rural:</strong> 64% of the counties in the analysis fall into this cluster. This is the largest cluster and contains a high percentage of White and African
+          American persons. The ethnicities with the lowest percentage are Hispanics and Asians, as well as the lowest foreign born percentage. Other
+          characteristics of the cluster include the least educated, lowest median income, ~$37,000, and highest poverty level, 21.5%. This cluster has the
+          highest percentage of Native Americans, 1.67%. Donald Trump has his highest winning percentage in this cluster, winning 74% of the counties in this
+          cluster.<br>
+          <br>
+          <strong>Rising Prosperity:</strong> 30% of the counties in the analysis fall into this cluster. This cluster maintains the highest percentage of white persons and
+          low or lowest percentages of African Americans, Asians, and Hispanic persons. The homeowner rate is also the highest in this cluster than the others,
+          while also having a high median household income and a low poverty rate. Donald Trump has his lowest winning percentage in this cluster, only winning
+          53% of the counties in this cluster.<br>
+          <br>
+          <strong>Urban:</strong> 5% of the counties fall into this cluster. They have a good mixed proportion of the White, African American, Asian, and Hispanic ethnicities,
+          as well as foreign-born voters. This cluster is where you will find the highest educated and wealthiest citizens (median household income, ~$55,000)
+          in the dataset. Donald Trump has won 72% of the counties in the cluster.<br>
+          <br>
+          <strong>Metropolitan:</strong> 1% of the counties fall into this cluster. This cluster has the largest percentages of young voters and African Americans Asian, and
+          Hispanic ethnicities; as well as the highest percentage of foreign-born persons. This cluster also has a high poverty rate, 17%, and the lowest
+          homeowner rate, 61.5%. Unsurprisingly, boasting the highest population density too. Donald Trump has won nearly 70% of the counties in the cluster.<br>
+          <br>
+          Immediately, I notice some irregularities between my findings and the media. I was led to believe that Trump polls well with the older white
+          population while not polling so well with other ethnicities. Yes, my findings tend to corroborate those reports that Trump polls well with the
+          white population, winning 74% of the “Rural” cluster. However, he also has a high winning percentage in the “Metropolitan” cluster, which contains
+          the highest percentage of young voters, African Americans, Asian, and Hispanics.
+          <br>
+          <br>
         </p>
       </div>
 
       <div id="Risk" class="tabcontent">
         <h3>Womens Health Risk Assessment</h3>
         <p>
-          <i>Coming Soon!</i>
+          <i>Team Members: Weiwei G., Yang L., Sara M.<br>
+          Program(s): SAS, R, Python<br>
+          Model(s): Logistic Regression, Clustering, Neural Network, Decision Tree, Random Forests<br></i>
+          <br>
+          Human Immunodeficiency Virus (HIV) is a virus spreading around the world. Per the National Institute of Allergy and Infectious
+          Diseases (NIAID) nearly 37 million people have HIV and 1.2 million people are living with HIV in the United States. However, a
+          large portion are unaware of their HIV discovery. To decrease the transmission of the diseases and improve the women’s health,
+          Microsoft announced the Women&#8217;s Health Risk Assessment competition that looks for machine learning solutions, in which Bill &
+          Melinda Gates funded the competition. The focus of the competition is in the underdeveloped areas of the world, including most of
+          Africa and India. In association with the World Health Organization (WHO) they developed a survey that reached 9,000 women in clinics
+          and approximately 1,000 subjects in each region. The purpose of this study is to help clinics target the disease at risk and plan
+          health care budget more efficiently so that more women can be treated in underdeveloped countries. The problem is a binary classification.
+          As far as the expectation, researchers want to see what are the most important things that are associated with the infection of HIV
+          among women ages 15-44.<br>
+          <br>
+          For us to build a relatively accurate model, we needed to find out which features that matter the most. To do it properly, we performed a
+          random forest model on our dataset. The random forest model in Python scikit-learn package offers a way to see the importance of each
+          independent variable relative to the dependent variable. The most important features revealed from this analysis are modcon, tribe, district,
+          babydoc, labordeliv, geo, segment, debut, usecondom, and hivknow. Using these variables, among others, we decided to develop several different
+          models including logistic regression, decision tree, random forests, and a neural network. The takeaways from this along with model creation
+          and validation is that individuals with access to modern technologies (computers, radios, irrigation, etc.) and using modern contraception and/or
+          condoms will lower the risk of HIV. Other factors that can radically influence the risk is the religion they follow, education, literacy, and
+          income.<br>
+          <br>
+          We compared the models using mean square error (MSE) on validation data to select the best model for the project. Considering we use
+          variable clustering for the predictor selection prior to logistic regression, decision tree and neural network, we used SAS e-Miner
+          to compare these three models, and the program selects the neural network to be the best model with the MSE of 0.12. However, compared
+          with the MSE generated using cross-validation from ridge regression and random forest, we believe that random forest is the best model
+          to predict HIV subgroup in this project with the lowest MSE of 0.07.<br>
+          <br>
+          Finally, our group wanted to look at some sort of unsupervised learning to experiment with. The dataset lends itself well to be segmented
+          especially considering that it contains a myriad of health, demographic, and socio-economic features. The clustering analysis was done
+          through R, and we used the <i>k</i>-means approach. After consulting the within sum of squares “elbow” plot, <i>k</i> was determined to be set at 3.
+          Looking at the means of each cluster it becomes clear that there are differences among them.<br>
+          <br>
+          <strong>Cluster 1: Educated Young Women</strong> - This cluster has the youngest average age of all the other clusters, 18. Contains the
+          lowest percentage of respondents that responded yes to EVER_HAD_SEX and EVER_BEEN_PREGNANT, which leads to the smallest ratio of the
+          clusters that currently have a child. Women in this cluster are educated as well, 31% of them are currently in school, they are literate and
+          are the most educated of the three clusters. Lowest risk of HIV infection and mostly christian or muslim.<br>
+          <br>
+          <strong>Cluster 2: Sexually Active Mid 20s Women</strong> - As the name says, this cluster’s average age is 26 and they contain the highest
+          percentage of women that have had sex, been pregnant, and had multiple partners. Lowest percentage (6%) in school, which could be explained
+          since they are older and may be out of school now. They are still literate and moderately educated. Highest HIVknow status, and most likely
+          to be married and/or have children. Highest risk of HIV infection and mostly christian or muslim.<br>
+          <br>
+          <strong>Cluster 3: Other</strong> - This cluster is all over the place, there is no proper way to describe them. A couple things to note
+          is that they are mostly muslim and hindu; and they are the least educated. However, they are more likely to own a cooker or fridge compared
+          to the other clusters.
+          <br>
+          <br>
         </p>
       </div>
 
