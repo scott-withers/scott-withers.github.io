@@ -18,7 +18,7 @@
       div.tab button {
         display: block;
         background-color: inherit;
-        color: white;
+        color: black;
         padding: 14px 16px;
         width: 100%;
         border: none;
@@ -41,11 +41,34 @@
       /* Style the tab content */
       .tabcontent {
         float: left;
-        padding: 0px 12px;
+        padding: 0px 24px;
         border: none;
         width: 70%;
         border-left: none;
         height: 30px;
+        -webkit-animation: fadeEffect 1s;
+        animation: fadeEffect 1.5s;
+      }
+
+      /* Fade in tabs */
+      @-webkit-keyframes fadeEffect {
+          from {opacity: 0;}
+          to {opacity: 1;}
+      }
+
+      @keyframes fadeEffect {
+          from {opacity: 0;}
+          to {opacity: 1;}
+      }
+
+      table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      }
+
+      th, td {
+      padding: 5px;
+      text-align: left;
       }
     </style>
   </head>
@@ -66,19 +89,151 @@
       </div><!-- /.blurb -->
     </div><!-- /.container -->
       <div class="tab">
-        <button class="tablinks" onclick="openProj(event, '3M')" id="defaultOpen">Analyzing 3M Patents</button>
+        <button class="tablinks" onclick="openProj(event, 'Bar')" id="defaultOpen">Survey & Marketing Analytics Project</button>
+        <button class="tablinks" onclick="openProj(event, 'Adm')">Predicting UNCC Admissions</button>
+        <button class="tablinks" onclick="openProj(event, '3M')">Analyzing 3M Patents</button>
         <button class="tablinks" onclick="openProj(event, 'Book')">SQL Bookstore Project</button>
         <button class="tablinks" onclick="openProj(event, 'Trump')">Donald Trump Voter Segmentation</button>
         <button class="tablinks" onclick="openProj(event, 'Risk')">Womens Health Risk Assessment Project</button>
-        <button class="tablinks" onclick="openProj(event, 'HHUSA')">Hire Heroes USA Data Challenge</button>
+        <button class="tablinks" onclick="openProj(event, 'HHUSA')">Teradata Data Challenge</button>
         <button class="tablinks" onclick="openProj(event, 'Patent')">Patent Clustering in Spark</button>
+      </div>
+
+      <div id="Bar" class="tabcontent">
+        <h3>Bar/Arcade Project</h3>
+          <p>
+            <i>Team Members: Ben A., Fred F., Shafie G., Daniel J.<br>
+            Program(s): SAS, R<br>
+            Model(s): Logistic Regression, PCA, Clustering</i><br>
+            <br>
+            Over the past few years, growth in the eSports industry has been stunning.  Per an article written by ESPN, 205 million people have watched
+            or played eSports in 2014.  Our group set out to assess the viability of an Electronic Sports (commonly referred to as eSports) themed bar
+            with the goal of designing a physical location that caters to people that watch or participate in eSports. This industry is growing immensely
+            and will not be adequately served by the traditional sports bar that is focused on mainstream sports such as football or basketball. Since this
+            is a burgeoning industry, there are limited competitors in the Charlotte, NC area. Both locations offer a retro-themed gaming experience complete
+            with playable arcade cabinets and vintage games.  The first thing that we noticed about our potential competitors is that neither focus on modern
+            game consoles (Xbox One, Playstation 4, etc.). Additionally,
+            neither location provides options for customers who are interested in eSports, either viewing or playing online with other people. The product
+            that we are proposing is a bar that targets people that are interested in eSports, specifically viewing eSports tournaments or playing multiplayer
+            online games. The eSports bar will provide space for people to socialize while enjoying beverages and an environment tailored to viewing eSports.
+            Our marketing objectives were to assess the viability of an eSports bar near the university, hone the business model, and identify advertising and
+            partnership channels. There are four phases to solving our marketing problem.  The first three objectives are exploratory, and the last seeks to
+            define the marketing opportunity.<br>
+            <br>
+            <strong>Data Collection</strong><br>
+            <br>
+            Our method of data collection would be survey responses. We designed a survey that consisted of 21 questions that surveyed local students and the
+            surrounding university area. The survey was designed with the help of SurveyMonkey, an online survey development service. After several rounds of
+            designing the questions, layout, and design; we posted the survey to several university social media pages including Facebook and Twitter. With a
+            low hit rate, we took to the Student Union and conducted an in-person survey, flagging down potential surveyors and having them sit at one of the
+            provided computers to complete the survey in return for some candy. At the same time of offering an electronic version of the survey, we would often
+            have a team member go off in another location within the Student Union and offer a paper-based copy of the survey. Analyzing the distribution of our
+            student survey responders shows a moderate bias towards the university community population. We have no precise information to compare with non-student&#8217;s
+            responders which are less than 15% our total responders.<br>
+            <br>
+            <strong>Principal Component Analysis</strong><br>
+            <br>
+            We performed principal components analysis on the survey questions to get a sense of the orthogonality of the survey questions we asked, and to provide
+            another means of identifying the underlying characteristics of our data set that account for the variance of the set. R was used for analysis, utilizing
+            the prcomp function to process the input data frame to produce principal components. The inputs were scaled to prevent dimensions with higher magnitudes
+            from dominating the results. The PCA analysis produced a set of vectors in the survey space that generated a new basis for the data that accounted for the
+            greatest proportion of the set&#8217;s variance along its axes. The first component accounted for 13.6% of the variance, and subsequent components decayed as
+            expected.  We set the tolerance, or percent variance/standard deviation at .06, as at that point the explanatory strength had started to level off. This
+            value left us with 8 components, which represented nearly half of the total variance in the set. (.489).  A visual inspection of the components revealed
+            several important metrics that scaled together, and were weighted to produce the new basis. The interpretation of the principal components was challenging,
+            but the results are shown below:<br>
+
+            <table style="width:100%">
+              <caption>Principal Components</caption>
+              <tr>
+                <th>Component</th>
+                <th>Label</th>
+                <th>Descriptor</th>
+              </tr>
+              <tr>
+                <td>PC1</td>
+                <td>Core PC eSports fans</td>
+                <td>Hours played, PC gaming, First Person Shooter games, eSports interest, young age, daytime classes</td>
+              </tr>
+              <tr>
+                <td>PC2</td>
+                <td>Youthfulness , tending female</td>
+                <td>Undergrads, little money, low employment, mobile gaming</td>
+              </tr>
+              <tr>
+                <td>PC3</td>
+                <td>Console Gaming</td>
+                <td>Xbox, FPS games, some more money, evening classes</td>
+              </tr>
+              <tr>
+                <td>PC4</td>
+                <td>Conventional sports focus</td>
+                <td>Playing sports, watching sports, going to sports bars</td>
+              </tr>
+              <tr>
+                <td>PC5</td>
+                <td>RTS PC playing</td>
+                <td>RTS, Dota, PC</td>
+              </tr>
+              <tr>
+                <td>PC6</td>
+                <td>Casual college girl</td>
+                <td>Mall, restaurants, gender, cocktails</td>
+              </tr>
+              <tr>
+                <td>PC7</td>
+                <td>Grad student commuting</td>
+                <td>Evening classes, off campus</td>
+              </tr>
+              <tr>
+                <td>PC8</td>
+                <td>Casual gaming</td>
+                <td>anti consoles, anti playing sports, board games</td>
+              </tr>
+          </table>
+          <br>
+
+          Once the components were identified, we applied the linear weights to the survey results in each question on the test, and the result was a score representing
+          each component for each survey completed.  As expected, the largest component was reliable in predicting interest in the target establishment, however,
+          interestingly, two other components produced statistically significant results that had a larger parameter estimate.  PC3 and PC8 both produced positive
+          results, and these PCs correspond to general measures of console gaming and casual gaming.  This result is particularly encouraging, because it suggests
+          that we need not depend on only the hardcore PC gaming community to drive profit.  Unsurprisingly, the only significant PC that had a negative impact on
+          predicting interest was the traditional female bar hopping and shopping measure.<br>
+          <br>
+          <strong>Segmentation, Targeting, Positioning</strong><br>
+          <br>
+          This clustering analysis revealed three distinct customer <strong>segments</strong>. The first segment is young, male, aware and interested in eSports and has a reasonable
+          social and gaming budget to be interested in our proposed Bar/Arcade. The second segment is similar in demographics to the first segment, but more of a casual
+          gamer, they&#8217;re not focused on eSports, but still interested in gaming and have a slightly lower social and gaming budget.  Both segments would be good customers
+          for our bar/arcade, and would make up the <strong>target</strong> of our marketing focus. The third segment is older, more female than male, and not interested in gaming.
+          These folks may be interested in attending our bar for the social atmosphere, as they do enjoy restaurants, shopping, and going to the cinema with friends, but
+          hey are not interested in the gaming aspect of our bar/arcade. Target Marketing to the customer segments can take three different paths: Direct, Indirect and
+          Social.  Direct marketing includes methods to reach out to the desired customers to appeal to them.  This could be advertising signs/posters in dormitories or
+          on-campus, direct mailings to all (or selected) on-campus students, inclusion of coupons or invitations to specific events.  Indirect marketing could include
+          sponsorship of on-campus sporting events (signs inside the stadium, or advertisements on the back of admission tickets), advertising in campus publications
+          (student newspapers, yearbook) or signs placed within student frequented locations (dining halls, snack-bars or student union).  Social media advertising can
+          include strategies to draw attention to Facebook page (attracting “likes”), sending Twitter messages on student group sites or other social media advertising.
+          For <strong>positioning</strong> of our product, we have a challenge, as the best customer segments are not of legal drinking age, and therefore are not going to be our most
+          profitable customers.  We would need to pursue revenue streams that would be different than the typical bar, which could include industry partnerships (gaming
+          hardware sponsorships, group events, or other co-branded eSports local or regional tournaments including entry fees or the like).  There is a clear interest
+          from the student population that were surveyed in having a bar/arcade near campus, however, to be a profitable venture, the greatest profit possibilities for
+          a bar – being alcohol sales – does not fit with the demographics of the customers showing the highest interest in our proposed bar/arcade.<br>
+          <br>
+          <br>
+          </P>
+      </div>
+
+      <div id="Adm" class="tabcontent">
+        <h3>Predictive Capabilities of UNCC Admissions Criterion</h3>
+        <p>
+          <i>Coming Soon!</i>
+        </p>
       </div>
 
       <div id="3M" class="tabcontent">
         <h3>Analyzing 3M Patents</h3>
         <p>
-          <i>3M Patents Innovation Strategy<br>
-          Team Members: Christy C., Rajah C., Lorenzo M, Abdullah M., Ryan W.<br>
+          <i>Team Members: Christy C., Rajah C., Lorenzo M, Abdullah M., Ryan W.<br>
           Program(s): Python, R, Hadoop, Tableau, Gephi<br>
           Model(s): Topic Modeling, Graph analysis, clustering<br></i>
           <br>
@@ -129,8 +284,9 @@
         <p>
           <i>Team Members: Null<br>
           Program(s): R<br>
-          Model(s): Clustering<br></i>
-          <br>
+          Model(s): Clustering<br>
+          <p style="color:red;">For more detail visit my <a href="https://github.com/scott-withers/R-Projects/blob/master/Trump_Clusters/Trump_Clusters.md">github</a></i></p>
+
           The purpose of this project was to look at the demographic profile of the people who vote for Donald Trump. This led me to create clusters
           of demographic profiles and see which cluster votes for Donald Trump more compared to the other clusters. The dataset contains primary results,
           demographic data, and a codebook. (Note: The data contains results from primary races as of March 2016, which is the reason why every state is

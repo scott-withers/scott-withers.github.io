@@ -15,7 +15,7 @@
   /* Style the buttons inside the tab */
   div.tab button {
       background-color: inherit;
-      color: white;
+      color: black;
       float: left;
       border: none;
       outline: none;
@@ -27,10 +27,12 @@
   /* Change background color of buttons on hover */
   div.tab button:hover {
       background-color: #000080;
+      color: #bfbfbf;
   }
   /* Create an active/current tablink class */
   div.tab button.active {
       background-color: #000080;
+      color: #bfbfbf;
   }
   /* Style the tab content */
   .tabcontent {
@@ -60,40 +62,50 @@
       <button class="tablinks" onclick="openRes(event, 'Edu')">Education</button>
       <button class="tablinks" onclick="openRes(event, 'CS')">Certifications & Skills</button>
       <button class="tablinks" onclick="openRes(event, 'LI')">Leadership & Involvement</button>
+      <button class="tablinks" onclick="openRes(event, 'Oth')">Other</button>
     </div>
 
     <div id="Exp" class="tabcontent">
       <h3 style="text-align:left;">University of North Carolina at Charlotte<span style="float:right;">2016</span></h3>
       <p style="font-size:17px"><i>Graduate Research Assistant</i></p>
-      <p>Developed a profile sheet and visualizations for the program to be used in the semi-annual board meeting<br>
-        Management of admissions data and student internship data for faculty governance<br>
-        Currently building a dashboard to help the admissions committee to track the applications process per semester, and to view applicants in a more visual manner.<br>
-        Developed a logistic regression model to aid the current admissions committee in the decision process which will cut down total review time per semester per committee member.</p>
+      <ul>
+        <li>Currently building a dashboard to help the admissions committee to track the applications process per semester, and to view applicants in a more visual manner.</li>
+        <li>Built logistic regression model to aid the current admissions committee in the decision process which will cut down total review time per semester per committee member.</li>
+        <li>Developed a profile sheet and visualizations for the program to be used in the semi-annual board meeting</li>
+        <li>Management of admissions data and student internship data for faculty governance</li>
+      </ul>
         <hr>
       <h3 style="text-align:left;">Appalachian State University<span style="float:right;">2014</span></h3>
       <p style="font-size:17px"><i>Graduate Assistant</i></p>
-      <p>Contributed to a research project on student trend analysis for Economics Dept. Chair Dr. John Whitehead</p>
+      <ul>
+        <li>Contributed to a research project on student trend analysis for Economics Dept. Chair Dr. John Whitehead</li>
+      </ul>
         <hr>
       <h3 style="text-align:left;">Kimco Realty Corporation<span style="float:right;">2012-2014</span></h3>
       <p style="font-size:17px"><i>Accounting Assistant</i></p>
-      <p>Assigned over 40 cash accounts for the reconciliation of the bank and mortgage statements<br>
-        Time-critical use of Hyperion and Excel to perform budget analysis for over 40 shopping centers<br>
-        Worked closely with the regional controller, legal consultants, and the Chairman to put together a package requesting damages from BP in the wake of the oil spill</p>
+      <ul>
+        <li>Assigned over 40 cash accounts for the reconciliation of the bank and mortgage statements</li>
+        <li>Time-critical use of Hyperion and Excel to perform budget analysis for over 40 shopping centers</li>
+        <li>Worked closely with the regional controller, legal consultants, and the Chairman to put together a package requesting damages from BP in the wake of the oil spill</li>
+      </ul>
     </div>
 
     <div id="Edu" class="tabcontent">
       <h3 style="text-align:left;">University of North Carolina at Charlotte<span style="float:right;">2017</span></h3>
       <p style="font-size:17px"><i>Masters of Science:<b> Data Science and Business Analytics</b></i></p>
-      <p>Analysis of 3M patent data in Hadoop. My group and I produced 5 topics through LDA topic modeling and developed a network based on cosine similarity between topics.</p>
+      <ul>
+        <li>Analysis of 3M patent data in Hadoop. My group and I produced 5 topics through LDA topic modeling and developed a network based on cosine similarity between topics.</li>
+      </ul>
         <hr>
       <h3 style="text-align:left;">Appalachian State University<span style="float:right;">2014</span></h3>
       <p style="font-size:17px"><i>Masters of Business Administration:<b> Business Analytics</b></i></p>
-      <p>Trip to France in October 2014 to work with a group of international students to present in front of a panel of international professors. Our research and presentation received top marks from all professors present.<br>
-        Worked on Chinese market research and analysis for the company Free Air, as well as a business proposal of analytical services that Free Air could explore with data obtained from Free Air products.</p>
+      <ul>
+        <li>Trip to France in October 2014 to work with a group of international students to present in front of a panel of international professors. Our research and presentation received top marks from all professors present.</li>
+        <li>Worked on Chinese market research and analysis for the company Free Air, as well as a business proposal of analytical services that Free Air could explore with data obtained from Free Air products.</li>
+      </ul>
         <hr>
       <h3 style="text-align:left;">Appalachian State University<span style="float:right;">2012</span></h3>
       <p style="font-size:17px"><i>Bachelors of Science:<b> Accounting & Economics</b></i></p>
-      <p>Won the Economics Award from the Walker College of Business’ economics department</p>
     </div>
 
     <div id="CS" class="tabcontent">
@@ -101,11 +113,15 @@
       <p style="font-size:17x">CPA Candidate, NC (All Exams Passed)<br>SAS Business Analytics Certification<br>
         ASU Graduate Certificate in Business Analytics</p>
       <h3>Program Proficiencies</h3>
-      <p>SAS Enterprise Miner and SAS Enterprise Guide<br> R<br> SQL<br> MapReduce functions and Hive interface
+      <p>SAS Enterprise Miner and SAS Enterprise Guide<br> R<br> SQL<br> PySpark<br> MapReduce functions and Hive interface
         in Hadoop<br> Tableau<br> Python<br> Oracle Hyperion w/ Smartview</p>
     </div>
 
     <div id="LI" class="tabcontent">
+      <p><i>Coming Soon!</i></p>
+    </div>
+
+    <div id="Oth" class="tabcontent">
       <p><i>Coming Soon!</i></p>
     </div>
 
