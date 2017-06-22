@@ -398,9 +398,61 @@
       </div>
 
       <div id="Patent" class="tabcontent">
-        <h3>Patent Clustering in Spark</h3>
+        <h3>Assessing the Innovative Characteristic of US Patents</h3>
         <p>
-          <i>Coming Soon!</i>
+          <i>Team Members: Marcia P.<br>
+            Program(s): R, Python, PySpark, Hadoop<br>
+            Model(s): Clustering<br>
+            <p style="color:red;">For more detail visit my <a href="https://github.com/scott-withers/PatentsProject/blob/master/PatentsProject_v1.0.ipynb">github</a></i></p>
+
+            This project was perhaps the most fun and the most difficult of all the projects that I completed during my time at university. It was my first
+            venture into Spark and coding up a script to run autonomously based on a single command. The domain was also interesting, my teammate, for all
+            intents and purposes, was an expert in the field of patents; she had performed numerous other projects on the subject. The reasoning behind this
+            assignment was that in 2013, the USPTO started transitioning from a legacy patent classification system (the US Patent Classification System or USPC
+            system) to the new Cooperative Patent Classification (CPC) system.
+            <br>
+            From 2011 to 2014, Dr. Deborah Strumsky, and others, did significant research to assess the level of patent innovation based on the USPC codes assigned
+            to a patent. This project repeated a small portion of her work, to see if the new CPC system can also be used to assess patent innovation. The CPC&#8217;s
+            hierarchic nature and the diversity of CPC sections, classes, and subclasses unique to each patent to could explain what type of innovative diversity
+            might be driving n-tuple trends. In addition, we applied <i>k</i>-means clustering to 3 million patents to see if patents can be clustered based on the quantity
+            and diversity of patent codes assigned to each patent. This technique and metrics could be used to assess the technological or innovative diversity of patents.
+            <br>
+            <stong>A Primer on CPC Code Hierarchy</strong>
+            Sections, there are just seven 1-digit “sections” in the CPC system. Class, these are 3-digit codes. Sub-class, there are 674 sub-classes in the CPC system,
+            these are 4-digit codes. Main-group is defined as the 8-digit code, everything before the “/”. Subgroups, or n-tuple, are the complete 14-digit codes, of
+            which there are 250k.
+            <br>
+            Example of an entire code: B64C 13/02.<br>
+            Where B is the section: ex. performing operations; transporting. - 64 defines the class: ex. Aircraft, Aviation, Cosmonautics. - C defines the sub-class:
+            ex. Aeroplanes, helicopters. - 13 defines the main group: ex. control systems or transmitting systems for actuating flying-control surfaces. - 02 defines
+            the subgroup: ex. aircraft control/automatic/electric course control.
+            <br>
+            Each n-tuple is labeled as <i>inventive</i> (based on claims) or <i>additive</i> (providing additional information to the patent) and <i>first</i> or <i>later</i>. There is only one
+            <i>first</i> n-tuple on each patent, which represents the one n-tuple that best represents the patent.
+            <br>
+            <strong>Results</strong>
+            Since 2008, our analysis showed that there had been a steady increase in the average number of unique 14-digit CPC codes assigned to patents. The increase in
+            average number of unique 14-digit CPC codes is driven, overall, by using more maingroups, not more classes or subclasses, on each patent. This could be interpreted
+            as meaning that patents are not combining technologies that are very diverse, but patents are increasingly combining claims related to technology subsegments that
+            are fairly related to each other. Our analysis also showed that patents defined by 1-tuple or 2-tuples are declining significantly, and patents defined by 10+ tuples
+            (i.e. patents with 10 or more unique CPC 14-digit codes assigned to them) are increasing significantly.
+            <br>
+            Our clustering results are presented below. A distributed clustering program, based on Lloyd&#8217;s algorithm, was coded to be ran in PySpark. The performance of our
+            distributed <i>k</i>-means clustering program was evaluated by confirming our cluster means in R.
+            <br>
+            <strong>Maingroup Driven</stong> Cluster (n-tuple of 96): These patents have unusually high total number of codes that describe the patent, and this high number of codes is driven
+            by maingroups (where maingroups represents fairly related technology sub-sectors, like “aircraft power plants or engines” and “aircraft flight control systems”). –
+            So the innovation in this cluster is driven by the combination of many, fairly related technologies within a specific technology domain.
+            <br>
+            <strong>High Diversity</stong> Cluster (n-tuple of 32): This cluster has the broadest use of classes, 2.7, and subclasses, 3.6, and fairly robust use of n-tuples. Thus, this
+            cluster of patents represents innovation that combines technologies from the broadest/most diverse set of technology domains.
+            <br>
+            <strong>Average</stong> Cluster (n-tuple of 11): This cluster represents patents in the middle of our “narrow to diverse” technology scale.
+            <br>
+            <strong>Narrow</stong> Cluster (n-tuple of 3.35): These patents incorporate the narrowest (least diverse) set of technologies. Only about three codes in total used on the patent,
+            and all three of those are from just one or two classes or subclasses. So patents in this cluster are focused mostly within one technology domain.
+            <br>
+            <br>
         </p>
       </div>
 
