@@ -110,8 +110,8 @@
             or played eSports in 2014.  Our group set out to assess the viability of an Electronic Sports (commonly referred to as eSports) themed bar
             with the goal of designing a physical location that caters to people that watch or participate in eSports. This industry is growing immensely
             and will not be adequately served by the traditional sports bar that is focused on mainstream sports such as football or basketball. Since this
-            is a burgeoning industry, there are limited competitors in the Charlotte, NC area. Both locations offer a retro-themed gaming experience complete
-            with playable arcade cabinets and vintage games.  The first thing that we noticed about our potential competitors is that neither focus on modern
+            is a burgeoning industry, there are limited competitors in the Charlotte, NC area. There are two potential rivals and both offer a retro-themed gaming experience complete
+            with playable arcade cabinets and vintage games. The first thing that we noticed about our potential competitors is that neither focus on modern
             game consoles (Xbox One, Playstation 4, etc.). Additionally,
             neither location provides options for customers who are interested in eSports, either viewing or playing online with other people. The product
             that we are proposing is a bar that targets people that are interested in eSports, specifically viewing eSports tournaments or playing multiplayer
@@ -135,7 +135,7 @@
             <br>
             We performed principal components analysis on the survey questions to get a sense of the orthogonality of the survey questions we asked, and to provide
             another means of identifying the underlying characteristics of our data set that account for the variance of the set. R was used for analysis, utilizing
-            the prcomp function to process the input data frame to produce principal components. The inputs were scaled to prevent dimensions with higher magnitudes
+            the <i>prcomp</i> function to process the input data frame to produce principal components. The inputs were scaled to prevent dimensions with higher magnitudes
             from dominating the results. The PCA analysis produced a set of vectors in the survey space that generated a new basis for the data that accounted for the
             greatest proportion of the set&#8217;s variance along its axes. The first component accounted for 13.6% of the variance, and subsequent components decayed as
             expected.  We set the tolerance, or percent variance/standard deviation at .06, as at that point the explanatory strength had started to level off. This
@@ -235,11 +235,11 @@
         <p>
           <i>Team Members: Christy C., Rajah C., Lorenzo M, Abdullah M., Ryan W.<br>
           Program(s): Python, R, Hadoop, Tableau, Gephi<br>
-          Model(s): Topic Modeling, Graph analysis, clustering<br></i>
+          Model(s): Topic Modeling, Graph analysis, Clustering<br></i>
           <br>
-          We analyzed 3M&#8217;s US patent portfolio relative to seven competitors using topic modeling, k-means clustering and network analysis. The dataset includes about
+          We analyzed 3M&#8217;s US patent portfolio relative to seven competitors using topic modeling, <i>k</i>-means clustering and network analysis. The dataset includes about
           33,000 patents for the eight companies. Relative to the selected competitors, 3M has a competitive advantage in areas like Stock Materials, Synthetic Resins,
-          Optical Systems and Adhesives. Using cosine similarity on the class distribution by company, 3M&#8217;s patent portfolio is most like Bostik, Dow and Du Pont, who are
+          Optical Systems, and Adhesives. Using cosine similarity on the class distribution by company, 3M&#8217;s patent portfolio is most like Bostik, Dow, and Du Pont, who are
           predominately Synthetic Materials and Chemistry companies. General Electric and Siemens focus more on Energy and Data & Processing patents; however, these companies
           compete with 3M in areas like Surgery and Stock Materials patents.<br>
           <br>
@@ -257,16 +257,16 @@
           <br>
           While 3M still enjoy a dominant position in Synthetic Materials, the external Dow/DuPont merger seriously threatens their market position, while internal initiatives
           from CEO Inge Thulin, attempting to increase patent quantity, have not yielded the desired results. Our research uncovered an objective way to measure the value of a
-          patent: cross-pollination. (Similar to friends in a social network, we use Betweenness as a network measure of cross-pollination). GE seems to have mastered
+          patent: cross-pollination. Similar to friends in a social network, we used <i>Betweenness</i> as a network measure of cross-pollination. GE seems to have mastered
           cross-pollination and enjoys an enviable position in the patent world; 3M has only a toe-hold in the world of cross-pollinators.<br>
           <br>
           We recommend cultivating our cross-pollination and beat competitors at their own game. Now that we know how to measure cross-pollination, 3M can both reward the best
-          in-house inventors and snap up the best independent (freelance) inventors. Extending the cross-pollination measure to companies, we have a way to acquire small companies
+          in-house inventors and snap up the best independent (freelance) inventors. Extending the cross-pollination measure to companies, 3M have a way to acquire small companies
           that cross-pollinate, extending our innovative reach. And for foreign or large companies, 3M should form strategic alliances, again using cross-pollination as a yardstick.
           Cross-pollination will create more patents, which in turn will bring more unique products to the market, creating value for customers. Diverting one-tenth of the R&D
-          Budget to cross-pollination could help this strategy succeed without increasing expenditures. We wouldd spend the same dollars, but in a more focused, targeted fashion.
+          Budget to cross-pollination could help this strategy succeed without increasing expenditures. We would spend the same dollars, but in a more focused, targeted fashion.
           A cross-pollination strategy should set Thulin&#8217;s innovation vision aright and ensure his long tenure at the helm. Never has 3M had such a powerful, data-driven tool
-          with which to drive innovation in our patent program.<br>
+          with which to drive innovation in their patent program.<br>
           <br>
           <br>
         </p>
@@ -343,29 +343,29 @@
           <br>
           Human Immunodeficiency Virus (HIV) is a virus spreading around the world. Per the National Institute of Allergy and Infectious
           Diseases (NIAID) nearly 37 million people have HIV and 1.2 million people are living with HIV in the United States. However, a
-          large portion are unaware of their HIV discovery. To decrease the transmission of the diseases and improve the women’s health,
+          large portion are unaware of their HIV discovery. To decrease the transmission of the diseases and improve women’s health,
           Microsoft announced the Women&#8217;s Health Risk Assessment competition that looks for machine learning solutions, in which Bill &
           Melinda Gates funded the competition. The focus of the competition is in the underdeveloped areas of the world, including most of
           Africa and India. In association with the World Health Organization (WHO) they developed a survey that reached 9,000 women in clinics
           and approximately 1,000 subjects in each region. The purpose of this study is to help clinics target the disease at risk and plan
-          health care budget more efficiently so that more women can be treated in underdeveloped countries. The problem is a binary classification.
-          As far as the expectation, researchers want to see what are the most important things that are associated with the infection of HIV
+          health care budget more efficiently so that more women can be treated in underdeveloped countries. The problem is a binary classification problem, low or
+          high risk of HIV. As far as the expectation, researchers want to see what are the most important things that are associated with the infection of HIV
           among women ages 15-44.<br>
           <br>
           For us to build a relatively accurate model, we needed to find out which features that matter the most. To do it properly, we performed a
           random forest model on our dataset. The random forest model in Python scikit-learn package offers a way to see the importance of each
-          independent variable relative to the dependent variable. The most important features revealed from this analysis are modcon, tribe, district,
-          babydoc, labordeliv, geo, segment, debut, usecondom, and hivknow. Using these variables, among others, we decided to develop several different
-          models including logistic regression, decision tree, random forests, and a neural network. The takeaways from this along with model creation
-          and validation is that individuals with access to modern technologies (computers, radios, irrigation, etc.) and using modern contraception and/or
+          independent variable relative to the dependent variable. The most important features revealed from this analysis are <i>modcon</i>, <i>tribe</i>, <i>district</i>,
+          <i>babydoc</i>, <i>labordeliv<i>, <i>geo</i>, <i>segment</i>, <i>debut</i>, <i>usecondom</i>, and <i>hivknow</i>. Using these variables, among others, we decided to develop several different
+          models including logistic regression, decision tree, random forests, and a neural network. The takeaways from this, along with model creation
+          and validation, is that individuals with access to modern technologies (computers, radios, irrigation, etc.) and using modern contraception and/or
           condoms will lower the risk of HIV. Other factors that can radically influence the risk is the religion they follow, education, literacy, and
           income.<br>
           <br>
-          We compared the models using mean square error (MSE) on validation data to select the best model for the project. Considering we use
-          variable clustering for the predictor selection prior to logistic regression, decision tree and neural network, we used SAS e-Miner
-          to compare these three models, and the program selects the neural network to be the best model with the MSE of 0.12. However, compared
+          We compared the models using mean square error (MSE) on validation data to select the best model for the project. Considering we used
+          variable clustering for the predictor selection prior to logistic regression, decision tree, and neural network, we used SAS e-Miner
+          to compare these three models, and the program selected the neural network to be the best model with the MSE of 0.12. However, compared
           with the MSE generated using cross-validation from ridge regression and random forest, we believe that random forest is the best model
-          to predict HIV subgroup in this project with the lowest MSE of 0.07.<br>
+          to predict HIV subgroup in this project with a MSE of 0.07.<br>
           <br>
           Finally, our group wanted to look at some sort of unsupervised learning to experiment with. The dataset lends itself well to be segmented
           especially considering that it contains a myriad of health, demographic, and socio-economic features. The clustering analysis was done
@@ -373,7 +373,7 @@
           Looking at the means of each cluster it becomes clear that there are differences among them.<br>
           <br>
           <strong>Cluster 1: Educated Young Women</strong> - This cluster has the youngest average age of all the other clusters, 18. Contains the
-          lowest percentage of respondents that responded yes to EVER_HAD_SEX and EVER_BEEN_PREGNANT, which leads to the smallest ratio of the
+          lowest percentage of respondents that responded yes to <i>ever_had_sex</i> and <i>ever_been_pregnant</i>, which leads to the smallest ratio of the
           clusters that currently have a child. Women in this cluster are educated as well, 31% of them are currently in school, they are literate and
           are the most educated of the three clusters. Lowest risk of HIV infection and mostly christian or muslim.<br>
           <br>
